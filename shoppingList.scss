@@ -1,0 +1,159 @@
+@mixin flexCenter($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+@mixin fonts($size) {
+    font-size: $size;
+    font-weight: 600;
+}
+
+@mixin buttons() {
+    height: 25px;
+    width: auto;
+    border-radius: 3px;
+    margin: 0px 0px 0px 5px;
+    background: rgb(62, 62, 62);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: message-box;
+    text-align: left;
+    @include flexCenter(column);
+    width: 100vw;
+    height: 100vh;
+
+    .main {
+        @include flexCenter(column);
+        color: black;
+
+        .main-title-box {
+            margin: 0px 0px 10px 0px;
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+            color: white;
+            background-color: rgb(41, 198, 41);
+        }
+
+        .shop-list-form {
+            width: 98%;
+            border: 1px solid rgb(221, 221, 221);
+            padding: 10px;
+            height: auto;
+
+            .additems {
+                @include fonts(17px);
+            }
+
+            .add-items-box {
+                @include flexCenter(row);
+                justify-content: flex-start;
+
+                .submit-button {
+                    @include buttons();
+                }
+            }
+
+            .items-title {
+                @include fonts(17px);
+            }
+
+            .items-box {
+                margin: 0px 0px 20px 0px;
+
+                .item {
+                    @include flexCenter(row);
+                    justify-content: space-between;
+                    padding: 7px;
+                    border: 1px solid rgb(221, 221, 221);
+
+                    .items-title {
+                        margin: 3px 0px 3px 0px;
+                    }
+
+                    .checked-buttons {
+                        @include buttons();
+                        background-color: green;
+                    }
+
+                    .remove-buttons {
+                        @include buttons();
+                        width: 52px;
+                        background-color: rgb(238, 0, 0);
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+    body {
+        justify-content: flex-start;
+        .main {
+            width: 100%;
+            height: 100%;
+            justify-content: flex-start;
+
+            .main-title-box {
+                height: 10%;
+                padding: 15px;
+            }
+
+            .shop-list-form {
+
+                height: 90%;
+
+                .add-items-box {
+                    height: 10%;
+                    .submit-button {
+                        width: auto;
+                        padding: 10px;
+                    }
+                }
+
+                .items-box {
+                    max-height: 90%;
+                    overflow: scroll;
+                }
+            }
+        }
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {}
+
+/*landscape*/
+@media screen and (orientation:landscape) and (max-width : 1000px) {}

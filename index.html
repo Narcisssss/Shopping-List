@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./shoppingList.css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-title-box">
+            <h1 class="shop-list-title">Shopping list</h1>
+        </div>
+        <form class="shop-list-form">
+            <label for="additems" class="additems">Add Items</label><br>
+            <div class="add-items-box">
+                <input type="text" id="additems" name="additems" style="height: 25px; margin: 0px;  border: 1px solid rgb(221, 221, 221);">
+                <input type="submit" value="Submit" class="submit-button">
+            </div>
+            <p class="items-title">Items</p>
+            <div id="items" class="items-box">
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./shoppingList.js"></script>
+
+</html>
